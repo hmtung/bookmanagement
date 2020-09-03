@@ -1,5 +1,7 @@
+
 package service;
 
 
-public class BookService {
+public interface BookService {
+
 }

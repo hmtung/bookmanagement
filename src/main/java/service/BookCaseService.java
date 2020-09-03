@@ -1,5 +1,7 @@
+
 package service;
 
 
-public class BookCaseService {
+public interface BookCaseService {
+
 }

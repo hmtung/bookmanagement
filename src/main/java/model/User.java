@@ -2,52 +2,53 @@ package model;
 
 import java.io.Serializable;
 
-
 public class User implements Serializable {
-    private int id;
-    private String username;
-    private String password;
-    private BookCase bookCase;
 
-    public User() {
-    }
+  private static final long serialVersionUID = 1L;
+  private int id;
+  private String username;
+  private String password;
+  private BookCase bookCase;
 
-    public User(int id, String username, String password, BookCase bookCase) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.bookCase = bookCase;
-    }
+  public User() {
+  }
 
-    public int getId() {
-        return id;
-    }
+  public User(int id, String username, String password, BookCase bookCase) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+    this.bookCase = bookCase;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getUsername() {
-        return username;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public String getPassword() {
+    return password;
+  }
 
-    public BookCase getBookCase() {
-        return bookCase;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-    public void setBookCase(BookCase bookCase) {
-        this.bookCase = bookCase;
-    }
+  public BookCase getBookCase() {
+    return bookCase;
+  }
+
+  public void setBookCase(BookCase bookCase) {
+    this.bookCase = bookCase;
+  }
 }
