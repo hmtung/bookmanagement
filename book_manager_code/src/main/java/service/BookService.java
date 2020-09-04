@@ -1,7 +1,9 @@
 package service;
 
 
+import java.util.Scanner;
+
 public interface BookService {
-    int deleteById(Integer id);
+    void deleteById(Scanner scanner);
 
 }
