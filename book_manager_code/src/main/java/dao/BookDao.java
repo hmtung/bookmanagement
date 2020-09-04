@@ -1,13 +1,13 @@
 package dao;
 
-import java.util.List;
-
 import model.Book;
 
+import java.util.List;
+
 public interface BookDao {
-  public List<Book> getAllBook();
+    List<Book> getAllBook();
 
-  public Book getBookById(String id);
+    Book getBookById(String id);
 
-  public Integer insertBook(Book book);
+    Integer insertBook(Book book);
 }

@@ -1,16 +1,15 @@
-
 package dao;
-
-import java.util.List;
 
 import mapper.IRowMapper;
 
+import java.util.List;
+
 public interface BaseDao<T> {
-  public List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameters);
+    List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameters);
 
-  public void update(String sql, Object... parameters);
+    void update(String sql, Object... parameters);
 
-  public Integer insert(String sql, Object... parameters);
+    Integer insert(String sql, Object... parameters);
 
-  public Integer delete(String sql, Object... parameters);
+    Integer delete(String sql, Object... parameters);
 }

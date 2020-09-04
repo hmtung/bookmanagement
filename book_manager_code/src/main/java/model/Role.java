@@ -3,26 +3,26 @@ package model;
 import java.io.Serializable;
 
 public class Role implements Serializable {
-  private static final long serialVersionUID = 1L;
-  private int roleId;
-  private String authority;
+    private static final long serialVersionUID = 1L;
+    private Integer roleId;
+    private String authority;
 
-  public Role() {
-  }
+    public Role() {
+    }
 
-  public int getRoleId() {
-    return roleId;
-  }
+    public Integer getRoleId() {
+        return roleId;
+    }
 
-  public void setRoleId(int roleId) {
-    this.roleId = roleId;
-  }
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
 
-  public String getAuthority() {
-    return authority;
-  }
+    public String getAuthority() {
+        return authority;
+    }
 
-  public void setAuthority(String authority) {
-    this.authority = authority;
-  }
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
 }

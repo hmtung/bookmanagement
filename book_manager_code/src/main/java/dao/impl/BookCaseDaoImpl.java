@@ -1,4 +1,7 @@
 package dao.impl;
 
-public class BookCaseDaoImpl  {
+import dao.BookCaseDao;
+import model.BookCase;
+
+public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDao {
 }
