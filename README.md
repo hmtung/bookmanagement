@@ -7,7 +7,7 @@
 
 4. serviceImpl: Chứa các class có nhiệm vụ thực hiện các business logic (xử lý nghiệp vụ).
 
-5. utils:Chứa các class dùng chung, hoặc các hàm xử lý, message, validater dùng chung.
+5. utils:Chứa các class dùng chung, hoặc các hàm xử lý, message, validator dùng chung.
 
 6: dao: Chứa các class thực hiện nhiệm vụ tương tác với cơ sở dữ liệu.
 
