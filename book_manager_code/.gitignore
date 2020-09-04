@@ -18,3 +18,4 @@ target/
 
 bookmanagement.iml
 bin/
+**/db.properties
