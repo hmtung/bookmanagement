@@ -1,5 +1,5 @@
 
-package util;
+package untils;
 
 /**
  * The Class MessageUntils.

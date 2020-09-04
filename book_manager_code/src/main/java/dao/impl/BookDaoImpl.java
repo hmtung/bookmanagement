@@ -5,7 +5,7 @@ import java.util.List;
 import dao.BookDao;
 import mapper.BookMapper;
 import model.Book;
-import util.Constants;
+import untils.Constants;
 
 public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 
@@ -15,7 +15,7 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
    * @see dao.BookDao#getAllBook()
    */
   public List<Book> getAllBook() {
-    StringBuffer query = new StringBuffer("SELECT *");
+    StringBuffer query = new StringBuffer("SELECT * \n");
     query.append("FROM " + Constants.BOOK_TABLE_NAME);
     List<Book> list = this.query(query.toString(), new BookMapper());
     return list;
@@ -27,7 +27,7 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
    * @see dao.BookDao#getBookById(java.lang.String)
    */
   public Book getBookById(String id) {
-    StringBuffer query = new StringBuffer("SELECT *");
+    StringBuffer query = new StringBuffer("SELECT * \n");
     query.append("FROM " + Constants.BOOK_TABLE_NAME);
     query.append("WHERE book_id = ? ");
     List<Book> list = this.query(query.toString(), new BookMapper(), id);
@@ -49,4 +49,5 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 
     return null;
   }
+
 }

@@ -1,5 +1,5 @@
 
-package util;
+package untils;
 
 import java.util.Scanner;
 
