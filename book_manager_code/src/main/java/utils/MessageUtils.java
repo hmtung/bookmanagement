@@ -1,10 +1,10 @@
 
-package untils;
+package utils;
 
 /**
- * The Class MessageUntils.
+ * The Class MessageUtils.
  */
-public class MessageUntils {
+public class MessageUtils {
 
   /** The Constant NO_RECORD. */
   public static final String NO_RECORD = "No record";

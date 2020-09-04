@@ -12,7 +12,7 @@ import java.util.List;
 
 import dao.BaseDao;
 import mapper.IRowMapper;
-import untils.JDBCConnection;
+import utils.JDBCConnection;
 
 public class BaseDaoImpl<T> implements BaseDao<T> {
 

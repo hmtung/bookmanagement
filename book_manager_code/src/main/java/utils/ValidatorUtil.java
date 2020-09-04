@@ -1,9 +1,9 @@
 
-package untils;
+package utils;
 
 import java.util.Scanner;
 
-public class ValidatorUntil {
+public class ValidatorUtil {
   public static int inputSelectdMenu(Scanner scanner) {
     int selected;
     do {
@@ -12,7 +12,7 @@ public class ValidatorUntil {
         selected = Integer.parseInt(scanner.nextLine());
         break;
       } catch (Exception e) {
-        System.out.println(MessageUntils.SELECTED_MENU_ERROR_MESSAGE);
+        System.out.println(MessageUtils.SELECTED_MENU_ERROR_MESSAGE);
       }
     } while (true);
     return selected;
@@ -26,7 +26,7 @@ public class ValidatorUntil {
         input = Integer.parseInt(scanner.nextLine());
         break;
       } catch (Exception e) {
-        System.out.println(MessageUntils.WRONG_FORMAT);
+        System.out.println(MessageUtils.WRONG_FORMAT);
       }
     } while (true);
     return input;
@@ -40,7 +40,7 @@ public class ValidatorUntil {
         input = Float.parseFloat(scanner.nextLine());
         break;
       } catch (Exception e) {
-        System.out.println(MessageUntils.WRONG_FORMAT);
+        System.out.println(MessageUtils.WRONG_FORMAT);
       }
     } while (true);
     return input;
