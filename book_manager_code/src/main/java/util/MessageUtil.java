@@ -1,10 +1,10 @@
 
-package utils;
+package util;
 
 /**
- * The Class MessageUtils.
+ * The Class MessageUtil.
  */
-public class MessageUtils {
+public class MessageUtil {
 
   /** The Constant NO_RECORD. */
   public static final String NO_RECORD = "No record";

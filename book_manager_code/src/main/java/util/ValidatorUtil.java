@@ -1,10 +1,10 @@
 
-package utils;
+package util;
 
 import java.util.Scanner;
 
 public class ValidatorUtil {
-  public static int inputSelectdMenu(Scanner scanner) {
+  public static int inputSelectedMenu(Scanner scanner) {
     int selected;
     do {
       try {
@@ -12,13 +12,13 @@ public class ValidatorUtil {
         selected = Integer.parseInt(scanner.nextLine());
         break;
       } catch (Exception e) {
-        System.out.println(MessageUtils.SELECTED_MENU_ERROR_MESSAGE);
+        System.out.println(MessageUtil.SELECTED_MENU_ERROR_MESSAGE);
       }
     } while (true);
     return selected;
   }
 
-  public static int inputInterge(String message, Scanner scanner) {
+  public static int inputInteger(String message, Scanner scanner) {
     int input;
     do {
       try {
@@ -26,7 +26,7 @@ public class ValidatorUtil {
         input = Integer.parseInt(scanner.nextLine());
         break;
       } catch (Exception e) {
-        System.out.println(MessageUtils.WRONG_FORMAT);
+        System.out.println(MessageUtil.WRONG_FORMAT);
       }
     } while (true);
     return input;
@@ -40,7 +40,7 @@ public class ValidatorUtil {
         input = Float.parseFloat(scanner.nextLine());
         break;
       } catch (Exception e) {
-        System.out.println(MessageUtils.WRONG_FORMAT);
+        System.out.println(MessageUtil.WRONG_FORMAT);
       }
     } while (true);
     return input;
