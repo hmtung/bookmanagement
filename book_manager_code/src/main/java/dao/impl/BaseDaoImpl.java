@@ -117,6 +117,29 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         }
     }
 
+    
+    public boolean checkLogin(String sql,String nameI, String passI, Object... parameters) {
+    	PreparedStatement statement = null;
+    	ResultSet resultSet = null;
+    	boolean check = false;
+    	try {
+    		statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+    		setParameter(statement, parameters);
+    		resultSet =statement.executeQuery();
+    		if(resultSet.next()) {
+    			if(nameI.equals(resultSet.getString(1))  && passI.equals(resultSet.getString(2)))
+    			{
+    				check = true;
+    			}
+    		}
+    	}catch (Exception e) {
+			e.printStackTrace();
+			check = false;
+		}
+		return check;
+    	
+    }
+    
     public void closeFunction(PreparedStatement ps, ResultSet rs) {
         try {
             if (ps != null) {
