@@ -8,7 +8,7 @@ import mapper.IRowMapper;
 public interface BaseDao<T> {
   public List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameters);
 
-  public void update(String sql, Object... parameters);
+  public Integer update(String sql, Object... parameters);
 
   public Integer insert(String sql, Object... parameters);
 

@@ -26,6 +26,17 @@ public class Book implements Serializable {
     this.category = category;
   }
 
+  public Book(String bookTitle, String author, String brief, String publisher, String content,
+      String category) {
+    super();
+    this.bookTitle = bookTitle;
+    this.author = author;
+    this.brief = brief;
+    this.publisher = publisher;
+    this.content = content;
+    this.category = category;
+  }
+
   public int getBookId() {
     return bookId;
   }
@@ -81,7 +92,6 @@ public class Book implements Serializable {
   public void setCategory(String category) {
     this.category = category;
   }
-
 
   @Override
   public String toString() {

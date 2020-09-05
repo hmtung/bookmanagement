@@ -7,7 +7,11 @@ import model.Book;
 public interface BookDao {
   public List<Book> getAllBook();
 
-  public Book getBookById(String id);
+  public Book getBookById(Integer id);
 
   public Integer insertBook(Book book);
+
+  public Integer updateBook(Book book);
+
+  public Integer deleteBook(Integer id);
 }

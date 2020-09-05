@@ -9,27 +9,17 @@ import util.Constants;
 
 public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 
-  /**
-   * {@inheritDoc}
-   * 
-   * @see dao.BookDao#getAllBook()
-   */
   public List<Book> getAllBook() {
-    StringBuffer query = new StringBuffer("SELECT * \n");
+    StringBuffer query = new StringBuffer("SELECT * ");
     query.append("FROM " + Constants.BOOK_TABLE_NAME);
     List<Book> list = this.query(query.toString(), new BookMapper());
     return list;
   }
 
-  /**
-   * {@inheritDoc}
-   * 
-   * @see dao.BookDao#getBookById(java.lang.String)
-   */
-  public Book getBookById(String id) {
-    StringBuffer query = new StringBuffer("SELECT * \n");
-    query.append("FROM " + Constants.BOOK_TABLE_NAME);
-    query.append("WHERE book_id = ? ");
+  public Book getBookById(Integer id) {
+    StringBuffer query = new StringBuffer("SELECT * ");
+    query.append(" FROM " + Constants.BOOK_TABLE_NAME);
+    query.append(" WHERE book_id = ? ");
     List<Book> list = this.query(query.toString(), new BookMapper(), id);
     if (list.size() == 0) {
       return null;
@@ -38,16 +28,27 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
     }
   }
 
-  /**
-   * {@inheritDoc}
-   * 
-   * @see dao.BookDao#insertBook(model.Book)
-   */
   public Integer insertBook(Book book) {
-    StringBuffer query = new StringBuffer("INSERT INTO  " + Constants.BOOK_TABLE_NAME);
-    query.append("VALUES()");
-
-    return null;
+    StringBuffer query = new StringBuffer("INSERT INTO  " + Constants.BOOK_TABLE_NAME + " ( ");
+    query.append(" book_title, author, brief, publisher, content, category )");
+    query.append(" VALUES(?, ?, ?, ?, ?,? )");
+    Integer result = this.insert(query.toString(), book.getBookTitle(), book.getAuthor(),
+        book.getBrief(), book.getPublisher(), book.getContent(), book.getCategory());
+    return result;
   }
 
+  public Integer updateBook(Book book) {
+    StringBuffer query = new StringBuffer("UPDATE " + Constants.BOOK_TABLE_NAME);
+    query.append(" SET book_title = ?");
+    query.append(" WHERE book_id = ? ");
+    Integer result = this.update(query.toString(), book.getBookTitle(), book.getBookId());
+    return result;
+  }
+
+  public Integer deleteBook(Integer id) {
+    StringBuffer query = new StringBuffer("DELETE FROM " + Constants.BOOK_TABLE_NAME);
+    query.append(" WHERE book_id = ? ");
+    Integer result = this.delete(query.toString(), id);
+    return result;
+  }
 }
