@@ -39,7 +39,7 @@ public class MessageUtil {
     /**
      * The Constant NOT_FOUND_MESAGE.
      */
-    public static final String NOT_FOUND_MESAGE = "Not found, try again.";
+    public static final String NOT_FOUND_MESSAGE = "Not found, try again.";
 
     /**
      * The Constant ADD_DATA_SUCCESS.
@@ -60,4 +60,11 @@ public class MessageUtil {
      * The Constant UPDATE_DATA_FAIL.
      */
     public static final String UPDATE_DATA_FAIL = "Update data fail";
+
+    public static final String BOOK_NOT_FOUND = "Book not found";
+
+    public static final String REMOVE_DATA_SUCCESS = "Remove data success";
+
+    public static final String REMOVE_DATA_FAIL = "Remove data fail";
+
 }

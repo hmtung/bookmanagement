@@ -1,5 +1,9 @@
 package view;
 
+import model.BookCase;
+import model.User;
+import service.impl.BookCaseServiceImpl;
+
 import java.util.Scanner;
 
 
@@ -7,6 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = null;
         int select;
+
         try {
             scanner = new Scanner(System.in);
             while (true) {

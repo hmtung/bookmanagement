@@ -36,7 +36,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
       }
       return list;
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      e.printStackTrace();
       return null;
     } finally {
       closeFunction(statement, resultSet);
@@ -52,7 +52,10 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
       result = statement.executeUpdate();
       return result;
     } catch (SQLException e) {
+      e.printStackTrace();
       return null;
+    } finally {
+      closePreparedStatement(statement);
     }
   }
 
@@ -70,6 +73,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
       }
       return id;
     } catch (SQLException e) {
+      e.printStackTrace();
       return null;
     } finally {
       closeFunction(statement, resultSet);
@@ -90,7 +94,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
       }
       return id;
     } catch (SQLException e) {
-
+      e.printStackTrace();
       return null;
     } finally {
       closeFunction(statement, resultSet);
