@@ -1,22 +1,16 @@
-
 package dao.impl;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 import dao.BaseDao;
 import mapper.IRowMapper;
 import util.JDBCConnection;
 
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
-  private Connection connection;
+  protected static Connection connection;
 
   public BaseDaoImpl() {
     if (connection == null) {
@@ -44,6 +38,8 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     } catch (SQLException e) {
       System.out.println(e.getMessage());
       return null;
+    } finally {
+      closeFunction(statement, resultSet);
     }
   }
 
@@ -75,6 +71,8 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
       return id;
     } catch (SQLException e) {
       return null;
+    } finally {
+      closeFunction(statement, resultSet);
     }
   }
 
@@ -94,6 +92,8 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     } catch (SQLException e) {
 
       return null;
+    } finally {
+      closeFunction(statement, resultSet);
     }
   }
 
@@ -114,6 +114,29 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
       }
     } catch (SQLException e) {
       return;
+    }
+  }
+
+  public void closeFunction(PreparedStatement ps, ResultSet rs) {
+    try {
+      if (ps != null) {
+        ps.close();
+      }
+      if (rs != null) {
+        rs.close();
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void closePreparedStatement(PreparedStatement ps) {
+    try {
+      if (ps != null) {
+        ps.close();
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
   }
 

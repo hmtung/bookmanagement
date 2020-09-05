@@ -1,4 +1,7 @@
 package dao.impl;
 
-public class UserDaoImpl  {
+import dao.UserDao;
+import model.User;
+
+public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
 }

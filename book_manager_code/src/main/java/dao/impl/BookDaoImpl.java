@@ -1,11 +1,11 @@
 package dao.impl;
 
-import java.util.List;
-
 import dao.BookDao;
 import mapper.BookMapper;
 import model.Book;
 import util.Constants;
+
+import java.util.List;
 
 public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 
