@@ -2,13 +2,13 @@ package service.impl;
 
 import java.util.List;
 
-import dao.BookCaseDao;
 import dao.impl.BookCaseDaoImpl;
 import dao.impl.BookDaoImpl;
 import dao.impl.ContainDaoImpl;
 import model.BookCase;
 import model.Contain;
 import service.BookCaseService;
+import util.MessageUtil;
 
 public class BookCaseServiceImpl implements BookCaseService {
 	private BookDaoImpl bookDaoImpl;
@@ -23,10 +23,9 @@ public class BookCaseServiceImpl implements BookCaseService {
 
 	public void viewBookCase(Integer user_id) {
 		BookCase bookCase = bookCaseDaoImpl.viewBookCase(user_id);
-		System.out.println(bookCase.toString());
 		List<Contain> listContains = containDaoImpl.viewContain(bookCase.getBookCaseId());
-		if (listContains.size() == 0) {
-			System.out.println("Your BookCase is empty");
+		if (listContains.isEmpty()) {
+			System.out.println(MessageUtil.BOOK_CASE_IS_EMPTY);
 		} else {
 			System.out.println("Your BookCase has " + listContains.size() + " books:");
 			for (Contain i : listContains) {
