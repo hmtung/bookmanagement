@@ -43,16 +43,16 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         }
     }
 
-    public Integer update(String sql, Object... parameters) {
+    public void update(String sql, Object... parameters) {
         PreparedStatement statement = null;
-        Integer result = null;
         try {
             statement = connection.prepareStatement(sql);
             setParameter(statement, parameters);
-            result = statement.executeUpdate();
-            return result;
+            statement.executeUpdate();
         } catch (SQLException e) {
-        	return null;
+
+        } finally {
+            closePreparedStatement(statement);
         }
     }
 

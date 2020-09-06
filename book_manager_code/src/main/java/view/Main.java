@@ -2,8 +2,6 @@ package view;
 
 import java.util.Scanner;
 
-import service.impl.BookServiceImpl;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -18,8 +16,7 @@ public class Main {
                 System.out.println("3. ");
                 System.out.println("4. ");
                 System.out.println("5. ");
-                System.out.println("6. Update book by id");
-                System.out.println("7. Exit");
+                System.out.println("6. Exit");
                 System.out.println("============================");
 
                 System.out.print("=> Choose: ");
@@ -42,12 +39,7 @@ public class Main {
                     case 5:
 
                         break;
-                    case 6:{
-                    	BookServiceImpl bookServiceImpl = new BookServiceImpl();
-                    	bookServiceImpl.editBookService(scanner);
-                    	break;
-                    }
-                    case 7:
+                    case 6:
                         System.out.println("Close program");
                         return;
                 }
