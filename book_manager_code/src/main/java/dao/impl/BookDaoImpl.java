@@ -26,9 +26,9 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
      *
      * @see dao.BookDao#getBookById(java.lang.String)
      */
-    public Book getBookById(String id) {
+    public Book getBookById(Integer id) {
         StringBuffer query = new StringBuffer("SELECT * \n");
-        query.append("FROM " + Constants.BOOK_TABLE_NAME);
+        query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
         query.append("WHERE book_id = ? ");
         List<Book> list = this.query(query.toString(), new BookMapper(), id);
         if (list.size() == 0) {
@@ -50,4 +50,58 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
         return null;
     }
 
+  /**
+   * {@inheritDoc}
+   * 
+   * @see dao.BookDao#searchBookByName
+   */
+  public List<Book> searchBookByName(String name) {
+	  	StringBuffer query = new StringBuffer("SELECT * \n");
+	    query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
+	    query.append("WHERE book_title LIKE ?");
+	    String name1 = '%'+ name + '%';
+	    List<Book> list = this.query(query.toString(), new BookMapper(), name1);
+	    
+	    if (list.size() == 0) {
+	      return null;
+	    } else {
+	      return list;
+	    }
+  }
+  
+  /**
+   * {@inheritDoc}
+   * 
+   * @see dao.BookDao#searchBookByAuthor
+   */
+  public List<Book> searchBookByAuthor(String author) {
+	  StringBuffer query = new StringBuffer("SELECT * \n");
+	    query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
+	    query.append("WHERE author LIKE ?");
+	    String author1 = '%'+ author + '%';
+	    List<Book> list = this.query(query.toString(), new BookMapper(), author1);
+	    if (list.size() == 0) {
+	      return null;
+	    } else {
+	      return list;
+	    }
+  }
+  
+  /**
+   * {@inheritDoc}
+   * 
+   * @see dao.BookDao#searchBookByCategory
+   */
+  public List<Book> searchBookByCategory(String category) {
+	  StringBuffer query = new StringBuffer("SELECT * \n");
+	    query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
+	    query.append("WHERE category LIKE ?");
+	    String category1 = '%'+ category + '%';
+	    List<Book> list = this.query(query.toString(), new BookMapper(), category1);
+	    if (list.size() == 0) {
+	      return null;
+	    } else {
+	      return list;
+	    }
+  }
 }
