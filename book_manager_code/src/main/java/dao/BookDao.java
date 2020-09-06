@@ -10,4 +10,6 @@ public interface BookDao {
     Book getBookById(String id);
 
     Integer insertBook(Book book);
+    
+    Integer editBook(Book book);
 }
