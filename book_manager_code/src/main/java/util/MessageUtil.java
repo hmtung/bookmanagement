@@ -61,13 +61,11 @@ public class MessageUtil {
      */
     public static final String UPDATE_DATA_FAIL = "Update data fail";
     
-    public static final String CHECK_BOOK = "check book";
+    public static final String CHECK_BOOK = "There is not any book in application";
     
-    public static final String CHECK_NOT_EXIST_BOOK = "check not exist book";
+    public static final String CHECK_NOT_EXIST_BOOK = "This book is not exist!";
     
-    public static final String ENTER_BOOK_ID = "enter book ID";
+    public static final String ENTER_BOOK_ID = "Please enter the book's id:";
     
-    public static final String DELETE_BOOK_SUCCESS ="delete book success";
-    
-    public static final String DELETE_FAILED ="delete book failed";
+
 }
