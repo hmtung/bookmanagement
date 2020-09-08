@@ -74,5 +74,6 @@ public class MessageUtil {
     public static final String REMOVE_DATA_SUCCESS = "Remove data success";
 
     public static final String REMOVE_DATA_FAIL = "Remove data fail";
-
+ 	
+	public static final String LOGIN_FAIL = "Username or Password is wrong! Please enter again.";
 }
