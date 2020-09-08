@@ -11,16 +11,15 @@ public interface BookDao {
     Book getBookById(Integer id);
 
   	Integer insertBook(Book book);
-  
+
   	List<Book> searchBookByName(String name);
-  
+
   	List<Book> searchBookByAuthor(String author);
-  
+
   	List<Book> searchBookByCategory(String category);
 
-    Integer insertBook(Book book);
-    
     Integer editBook(Book book);
 
     int deleteById(Integer id) throws SQLException;
+
 }

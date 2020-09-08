@@ -2,15 +2,10 @@ package view;
 
 import java.util.Scanner;
 
-
 import com.sun.org.apache.xml.internal.security.Init;
 
 import service.BookCaseService;
 import service.impl.BookCaseServiceImpl;
-
-import service.impl.BookServiceImpl;
-
-
 
 public class Main {
 	
@@ -28,28 +23,13 @@ public class Main {
         try {
             scanner = new Scanner(System.in);
             while (true) {
-
                 System.out.println("======= READING BOOK MANAGEMENT SYSTEM =======");
                 System.out.println("1. Login");
                 System.out.println("2. Display book case");
                 System.out.println("3. ");
                 System.out.println("4. ");
                 System.out.println("5. ");
-                System.out.println("6. Update book by id");
-                System.out.println("7. Exit");
-
-            	System.out.println("1. Login");
-                System.out.println("2. Logout");
-                System.out.println("3. View list book");
-                System.out.println("4. View book detail");
-                System.out.println("5. Search book");
-                System.out.println("6. View bookcase");
-                System.out.println("7. Edit bookcase");
-                System.out.println("8. Create book");
-                System.out.println("9. Update book");
-                System.out.println("10. Delete book");
-                System.out.println("11. Exit");
-
+                System.out.println("6. Exit");
                 System.out.println("============================");
 
                 System.out.print("=> Choose: ");
@@ -64,8 +44,7 @@ public class Main {
                     	bookCaseService.viewBookCase(1);
                         break;
                     case 3:
-                    	BookServiceImpl bookServiceImpl = new BookServiceImpl();
-                    	bookServiceImpl.viewListBook();
+
                         break;
                     case 4:
 
@@ -73,12 +52,7 @@ public class Main {
                     case 5:
 
                         break;
-                    case 6:{
-                    	BookServiceImpl bsi = new BookServiceImpl();
-                    	bsi.editBookService(scanner);
-                    	break;
-                    }
-                    case 7:
+                    case 6:
                         System.out.println("Close program");
                         return;
                 }

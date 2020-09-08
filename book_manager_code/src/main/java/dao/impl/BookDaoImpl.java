@@ -23,11 +23,6 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
         return list;
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * @see dao.BookDao#getBookById(java.lang.String)
-     */
     public Book getBookById(Integer id) {
         StringBuffer query = new StringBuffer("SELECT * \n");
         query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
@@ -106,46 +101,6 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 	      return list;
 	    }
   }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see dao.BookDao#getAllBook()
-	 */
-	public List<Book> getAllBook() {
-		StringBuffer query = new StringBuffer("SELECT * \n");
-		query.append("FROM " + Constants.BOOK_TABLE_NAME);
-		List<Book> list = this.query(query.toString(), new BookMapper());
-		return list;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see dao.BookDao#getBookById(java.lang.String)
-	 */
-	public Book getBookById(Integer id) {
-		StringBuffer query = new StringBuffer("SELECT * \n");
-		query.append("FROM " + Constants.BOOK_TABLE_NAME);
-		query.append("WHERE book_id = ? ");
-		List<Book> list = this.query(query.toString(), new BookMapper(), id);
-		if (list.size() == 0) {
-			return null;
-		} else {
-			return list.get(0);
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see dao.BookDao#insertBook(model.Book)
-	 */
-	public Integer insertBook(Book book) {
-		StringBuffer query = new StringBuffer("INSERT INTO  " + Constants.BOOK_TABLE_NAME);
-		query.append("VALUES()");
-
-		return null;
-	}
 
 	public int deleteById(Integer id) throws SQLException {
 		String query = "DELETE FROM " + Constants.BOOK_TABLE_NAME + " WHERE book_id = ?";
