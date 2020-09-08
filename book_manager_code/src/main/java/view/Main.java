@@ -14,8 +14,8 @@ public class Main {
 				System.out.println("======= READING BOOK MANAGEMENT SYSTEM =======");
 				System.out.println("1. Login");
 				System.out.println("2. ");
-				System.out.println("3. ");
-				System.out.println("4. ");
+				System.out.println("3. View list book ");
+				System.out.println("4. View book detail");
 				System.out.println("5. ");
 				System.out.println("6. Exit");
 				System.out.println("============================");

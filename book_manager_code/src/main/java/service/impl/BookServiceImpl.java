@@ -23,9 +23,13 @@ public class BookServiceImpl implements BookService{
 	
 	public void viewListBook() {
 		BookDao bookDao = new BookDaoImpl();
+		int stt = 1;
 		if(getNumOfBook() > 0) {
+			System.out.format("%1$-15s %2$-15s %3$-15s %4$-15s %5$-15s %6$-15s %7$-15s %8$-15s \n",
+                    "STT", "bookId", "bookTitle", "Author","Brief","Publisher","Content","Category");
 			for(Book book : bookDao.getAllBook()) {
-				System.out.println(book.toString());
+				book.display(stt);
+				stt++;
 			}
 		}
 		else {
@@ -35,7 +39,7 @@ public class BookServiceImpl implements BookService{
 	
 	public void readBook(Scanner scanner) {
 		BookDao bookDao = new BookDaoImpl();
-		String bookId = ValidatorUtil.inputString(MessageUtil.ENTER_BOOK_ID, scanner);
+		int bookId = ValidatorUtil.inputInteger(MessageUtil.ENTER_BOOK_ID, scanner);
 		if(bookDao.getBookById(bookId)==null) {
 			System.out.println(MessageUtil.CHECK_NOT_EXIST_BOOK);
 		}
