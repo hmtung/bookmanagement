@@ -11,6 +11,10 @@ public interface BookDao {
     Book getBookById(Integer id);
 
     Integer insertBook(Book book);
+    
+    Integer editBook(Book book);
+
 
     int deleteById(Integer id) throws SQLException;
+
 }

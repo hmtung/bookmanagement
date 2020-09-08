@@ -64,4 +64,19 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 		return result;
 	}
 
+    public Integer editBook(Book book) {
+		StringBuffer querry = new StringBuffer("UPDATE " +Constants.BOOK_TABLE_NAME +"\n");
+		querry.append("SET book_title = ?\n");
+		querry.append(",author = ?\n");
+		querry.append(",brief = ?\n");
+		querry.append(",publisher = ?\n");
+		querry.append(",content = ?\n");
+		querry.append(",category = ?\n");
+		querry.append("WHERE book_id = ?\n");
+		
+		Integer result = this.update(querry.toString(), book.getBookTitle(), book.getAuthor(),
+				book.getBrief(), book.getPublisher(), book.getContent(), book.getCategory(), 
+				book.getBookId());
+		return result;
+	}
 }
