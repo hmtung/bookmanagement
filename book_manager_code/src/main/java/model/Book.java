@@ -99,5 +99,18 @@ public class Book implements Serializable {
                 + ", brief=" + brief + ", publisher=" + publisher + ", content=" + content
                 + ", category=" + category + "]";
     }
+    
+    public void display(int stt) {
+    	
+    	System.out.format("%1$-15s %2$-15s %3$-15s %4$-15s %5$-15s %6$-15s %7$-15s %8$-15s \n",
+    			stt,
+                bookId,
+                bookTitle,
+                author,
+                brief,
+                publisher,
+                content,
+                category);
+    }
 
 }

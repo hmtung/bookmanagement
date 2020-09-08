@@ -39,7 +39,7 @@ public class MessageUtil {
     /**
      * The Constant NOT_FOUND_MESAGE.
      */
-    public static final String NOT_FOUND_MESSAGE = "Not found, try again.";
+    public static final String NOT_FOUND_MESAGE = "Not found, try again.";
 
     /**
      * The Constant ADD_DATA_SUCCESS.

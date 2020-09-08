@@ -28,16 +28,21 @@ public class BookServiceImpl implements BookService {
 		return count;
 	}
 
-	public void viewListBook() {
-		BookDao bookDao = new BookDaoImpl();
-		if (getNumOfBook() > 0) {
-			for (Book book : bookDao.getAllBook()) {
-				System.out.println(book.toString());
-			}
-		} else {
-			System.out.println(MessageUtil.CHECK_BOOK);
-		}
-	}
+    public void viewListBook() {
+        BookDao bookDao = new BookDaoImpl();
+        int stt = 1;
+        if(getNumOfBook() > 0) {
+            System.out.format("%1$-15s %2$-15s %3$-15s %4$-15s %5$-15s %6$-15s %7$-15s %8$-15s \n",
+                    "STT", "bookId", "bookTitle", "Author","Brief","Publisher","Content","Category");
+            for(Book book : bookDao.getAllBook()) {
+                book.display(stt);
+                stt++;
+            }
+        }
+        else {
+            System.out.println(MessageUtil.CHECK_BOOK);
+        }
+    }
 
 	public void readBook(Scanner scanner) {
 		BookDao bookDao = new BookDaoImpl();
@@ -65,25 +70,22 @@ public class BookServiceImpl implements BookService {
 		}
 	}
 
+    public void editBookService(Scanner scanner) {
+        System.out.println("------Edit Book------");
 
-public class BookServiceImpl implements BookService{
+        int book_id = ValidatorUtil.inputInteger("Enter book_id: ", scanner);
+        String book_title = ValidatorUtil.inputString("Enter book_title: ", scanner);
+        String author = ValidatorUtil.inputString("Enter author: ", scanner);
+        String brief = ValidatorUtil.inputString("Enter brief: ", scanner);
+        String publisher = ValidatorUtil.inputString("Enter publisher: ", scanner);
+        String content = ValidatorUtil.inputString("Enter content: ", scanner);
+        String category = ValidatorUtil.inputString("Enter category: ", scanner);
 
-	public void editBookService(Scanner scanner) {
-		System.out.println("------Edit Book------");
-		
-		int book_id = ValidatorUtil.inputInteger("Enter book_id: ", scanner);
-		String book_title = ValidatorUtil.inputString("Enter book_title: ", scanner);
-		String author = ValidatorUtil.inputString("Enter author: ", scanner);
-		String brief = ValidatorUtil.inputString("Enter brief: ", scanner);
-		String publisher = ValidatorUtil.inputString("Enter publisher: ", scanner);
-		String content = ValidatorUtil.inputString("Enter content: ", scanner);
-		String category = ValidatorUtil.inputString("Enter category: ", scanner);
-		
-		Book book = new Book(book_id, book_title, author, brief, publisher, content, category);
-		BookDaoImpl bd = new BookDaoImpl();
-		
-		Integer result = bd.editBook(book);
-		if (result==1) System.out.println("Update successful !");
-		else System.out.println("Update failed !");
-	}
+        Book book = new Book(book_id, book_title, author, brief, publisher, content, category);
+        BookDaoImpl bd = new BookDaoImpl();
+
+        Integer result = bd.editBook(book);
+        if (result==1) System.out.println("Update successful !");
+        else System.out.println("Update failed !");
+    }
 }
