@@ -16,7 +16,6 @@ public class ContainDaoImpl extends BaseDaoImpl<Contain> implements ContainDao {
         query.append("WHERE  book_case_id = ?");
         List<Contain> list = this.query(query.toString(), new ContainMapper(), book_case_id);
         if (list.size() == 0) {
-            System.out.println(11);
             return null;
         } else {
             return list;

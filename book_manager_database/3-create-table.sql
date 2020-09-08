@@ -59,6 +59,6 @@ CREATE TABLE contain
 	create_date DATETIME NOT NULL
 	CONSTRAINT PK_Contain PRIMARY KEY (book_case_id,book_id)
 	FOREIGN KEY (book_case_id) REFERENCES book_case_tbl(book_case_id),
-	FOREIGN KEY (book_id) REFERENCES book_tbl(book_id),
+	FOREIGN KEY (book_id) REFERENCES book_tbl(book_id) ON DELETE CASCADE,
 )
 

@@ -13,4 +13,6 @@ public interface BookCaseService {
     void removeBookFromBookCase(Scanner scanner, User user);
 
     void clearBookCase(User user);
+    
+    void editBookCase(Scanner scanner, User user);
 }

@@ -109,8 +109,6 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, id);
         int result = preparedStatement.executeUpdate();
-        preparedStatement.close();
-        connection.close();
         return result;
     }
 

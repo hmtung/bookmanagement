@@ -2,6 +2,7 @@ package mapper;
 
 import java.sql.ResultSet;
 
+import model.BookCase;
 import model.Role;
 import model.User;
 import model.UserRole;
@@ -17,6 +18,10 @@ public class UserRoleMapper implements IRowMapper<UserRole> {
       try {
         user.setId(rs.getInt("user_id"));
         user.setUsername(rs.getString("username"));
+        int bookCaseId = rs.getInt("book_case_id");
+        BookCase bookCase = new BookCase();
+        bookCase.setBookCaseId(bookCaseId);
+        user.setBookCase(bookCase);
       } catch (Exception e) {
         System.out.println("Converter User:" + e.getMessage());
         return null;

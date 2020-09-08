@@ -69,7 +69,7 @@ public class Main {
           bookCaseService.viewBookCase(Constants.USER_ROLE.getUser().getId());
           break;
         case 5:
-          System.out.println("Cho Tung di thi ve viet");
+          bookCaseService.editBookCase(scanner, Constants.USER_ROLE.getUser());
           break;
         case 6:
           if (isAdmin) {
@@ -93,7 +93,16 @@ public class Main {
           }
           break;
         case 9:
-          System.out.println("9");
+          userService.logOut();
+          userService.checkLogin(scanner);
+          Boolean login = ValidatorUtil.checkLogin(Constants.USER_ROLE);
+          if (login) {
+            System.out.println("Hello " + Constants.USER_ROLE.getUser().getUsername()
+                + ". Please selected function bellow by entering");
+            isAdmin = ValidatorUtil.checkRoleAdmin(Constants.USER_ROLE);
+          } else {
+            System.out.println("Login fail");
+          }
           break;
         }
 
