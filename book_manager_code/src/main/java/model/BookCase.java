@@ -30,9 +30,4 @@ public class BookCase implements Serializable {
     public void setBookCaseName(String bookCaseName) {
         this.bookCaseName = bookCaseName;
     }
-
-	@Override
-	public String toString() {
-		return "BookCase [bookCaseId=" + bookCaseId + ", bookCaseName=" + bookCaseName + "]";
-	}
 }
