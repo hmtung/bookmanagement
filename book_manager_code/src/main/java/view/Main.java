@@ -1,5 +1,9 @@
 package view;
 
+import model.BookCase;
+import model.User;
+import service.impl.BookCaseServiceImpl;
+
 import java.util.Scanner;
 
 import com.sun.org.apache.xml.internal.security.Init;
@@ -20,6 +24,7 @@ public class Main {
     	init();
         Scanner scanner = null;
         int select;
+
         try {
             scanner = new Scanner(System.in);
             while (true) {

@@ -56,7 +56,7 @@ CREATE TABLE contain
 (
 	book_case_id INT NOT NULL,
 	book_id INT NOT NULL,
-	create_date DATETIME NOT NULL CHECK(create_date <= GETDATE())
+	create_date DATETIME NOT NULL
 	CONSTRAINT PK_Contain PRIMARY KEY (book_case_id,book_id)
 	FOREIGN KEY (book_case_id) REFERENCES book_case_tbl(book_case_id),
 	FOREIGN KEY (book_id) REFERENCES book_tbl(book_id),

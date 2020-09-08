@@ -12,5 +12,5 @@ public interface BaseDao<T> {
     Integer insert(String sql, Object... parameters);
 
   	Integer delete(String sql, Object... parameters);
-  
+
 }
