@@ -41,10 +41,12 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
      * @see dao.BookDao#insertBook(model.Book)
      */
     public Integer insertBook(Book book) {
-        StringBuffer query = new StringBuffer("INSERT INTO  " + Constants.BOOK_TABLE_NAME);
-        query.append("VALUES()");
-
-        return null;
+      StringBuffer query = new StringBuffer("INSERT INTO  " + Constants.BOOK_TABLE_NAME + " ( ");
+      query.append(" book_title, author, brief, publisher, content, category )");
+      query.append(" VALUES(?, ?, ?, ?, ?,? )");
+      Integer result = this.insert(query.toString(), book.getBookTitle(), book.getAuthor(),
+          book.getBrief(), book.getPublisher(), book.getContent(), book.getCategory());
+      return result;
     }
 
     /**
@@ -107,26 +109,16 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, id);
         int result = preparedStatement.executeUpdate();
-
         preparedStatement.close();
         connection.close();
-
         return result;
     }
 
     public Integer editBook(Book book) {
         StringBuffer querry = new StringBuffer("UPDATE " + Constants.BOOK_TABLE_NAME + "\n");
-        querry.append("SET book_title = ?\n");
-        querry.append(",author = ?\n");
-        querry.append(",brief = ?\n");
-        querry.append(",publisher = ?\n");
-        querry.append(",content = ?\n");
-        querry.append(",category = ?\n");
+        querry.append("SET content = ?\n");
         querry.append("WHERE book_id = ?\n");
-
-        Integer result = this.update(querry.toString(), book.getBookTitle(), book.getAuthor(),
-                book.getBrief(), book.getPublisher(), book.getContent(), book.getCategory(),
-                book.getBookId());
+        Integer result = this.update(querry.toString(), book.getContent(), book.getBookId());
         return result;
     }
 }

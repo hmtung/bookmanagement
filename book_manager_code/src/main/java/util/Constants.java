@@ -35,4 +35,6 @@ public class Constants {
 	public static final String CONTAIN_TABLE_NAME = "contain";
 
 	public static UserRole USER_ROLE = new UserRole();
+	
+	
 }

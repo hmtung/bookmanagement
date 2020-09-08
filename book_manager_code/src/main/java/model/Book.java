@@ -37,6 +37,12 @@ public class Book implements Serializable {
         this.category = category;
     }
 
+    public Book(Integer bookId, String content) {
+      super();
+      this.bookId = bookId;
+      this.content = content;
+    }
+
     public int getBookId() {
         return bookId;
     }

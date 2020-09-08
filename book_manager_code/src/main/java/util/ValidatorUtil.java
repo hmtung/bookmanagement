@@ -57,7 +57,7 @@ public class ValidatorUtil {
   public static Boolean checkRoleAdmin(UserRole user) {
     try {
       if (!user.getRole().getAuthority().equals("ADMIN")) {
-        throw new CustomException("Bạn không có quyền truy cập chức năng này.");
+        throw new CustomException(MessageUtil.DO_NOT_PERMISSION);
       }
     } catch (CustomException e) {
       System.out.println(e.getMessage());
