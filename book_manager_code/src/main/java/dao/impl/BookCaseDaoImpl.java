@@ -10,8 +10,16 @@ import java.sql.Timestamp;
 import java.util.List;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BookCaseDaoImpl.
+ */
 public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDao {
 
+    /**
+     * {@inheritDoc}
+     * @see dao.BookCaseDao#viewBookCase(java.lang.Integer)
+     */
     public BookCase viewBookCase(Integer user_id) {
         StringBuffer query = new StringBuffer("SELECT * \n");
         query.append("FROM " + Constants.BOOK_CASE_TABLE_NAME + "\n");
@@ -24,6 +32,10 @@ public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDa
         }
     }
 
+    /**
+     * {@inheritDoc}
+     * @see dao.BookCaseDao#addBookToBookCase(int, int)
+     */
     public Integer addBookToBookCase(int bookId, int bookCaseId) {
         StringBuffer query = new StringBuffer();
         query.append("INSERT INTO " + Constants.CONTAIN_TABLE_NAME + "(");
@@ -32,6 +44,10 @@ public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDa
         return this.insert(query.toString(), bookCaseId, bookId, new Timestamp(System.currentTimeMillis()));
     }
 
+    /**
+     * {@inheritDoc}
+     * @see dao.BookCaseDao#removeBookFromBookCase(int, int)
+     */
     public Integer removeBookFromBookCase(int bookId, int bookCaseId) {
         StringBuffer query = new StringBuffer();
         query.append("DELETE FROM " + Constants.CONTAIN_TABLE_NAME);
@@ -40,6 +56,10 @@ public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDa
         return this.delete(query.toString(), bookCaseId, bookId);
     }
 
+    /**
+     * {@inheritDoc}
+     * @see dao.BookCaseDao#clearBookCase(int)
+     */
     public Integer clearBookCase(int bookCaseId) {
         StringBuffer query = new StringBuffer();
         query.append("DELETE FROM " + Constants.CONTAIN_TABLE_NAME);

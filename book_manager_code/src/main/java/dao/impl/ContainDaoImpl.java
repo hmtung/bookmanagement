@@ -8,8 +8,16 @@ import util.Constants;
 
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ContainDaoImpl.
+ */
 public class ContainDaoImpl extends BaseDaoImpl<Contain> implements ContainDao {
 
+    /**
+     * {@inheritDoc}
+     * @see dao.ContainDao#viewContain(java.lang.Integer)
+     */
     public List<Contain> viewContain(Integer book_case_id) {
         StringBuffer query = new StringBuffer("SELECT * \n");
         query.append("FROM " + Constants.CONTAIN_TABLE_NAME + "\n");

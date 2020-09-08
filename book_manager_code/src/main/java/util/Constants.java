@@ -2,6 +2,10 @@ package util;
 
 import model.UserRole;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Constants.
+ */
 public class Constants {
 
 	/**
@@ -34,6 +38,7 @@ public class Constants {
 	 */
 	public static final String CONTAIN_TABLE_NAME = "contain";
 
+	/** The user role. */
 	public static UserRole USER_ROLE = new UserRole();
 	
 	

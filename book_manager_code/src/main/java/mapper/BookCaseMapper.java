@@ -5,8 +5,16 @@ import model.BookCase;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BookCaseMapper.
+ */
 public class BookCaseMapper implements IRowMapper<BookCase> {
 
+    /**
+     * {@inheritDoc}
+     * @see mapper.IRowMapper#mapRow(java.sql.ResultSet)
+     */
     public BookCase mapRow(ResultSet rs) {
         BookCase bookCase = new BookCase();
         try {

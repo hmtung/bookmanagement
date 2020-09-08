@@ -5,21 +5,82 @@ import model.Book;
 import java.sql.SQLException;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface BookDao.
+ */
 public interface BookDao {
-    List<Book> getAllBook();
 
-    Book getBookById(Integer id);
+  /**
+   * Gets the all book.
+   *
+   * @return the all book
+   */
+  List<Book> getAllBook();
 
-    Integer insertBook(Book book);
+  /**
+   * Gets the book by id.
+   *
+   * @param id
+   *          the id
+   * @return the book by id
+   */
+  Book getBookById(Integer id);
 
-    List<Book> searchBookByName(String name);
+  /**
+   * Insert book.
+   *
+   * @param book
+   *          the book
+   * @return the integer
+   */
+  Integer insertBook(Book book);
 
-    List<Book> searchBookByAuthor(String author);
+  /**
+   * Search book by name.
+   *
+   * @param name
+   *          the name
+   * @return the list
+   */
+  List<Book> searchBookByName(String name);
 
-    List<Book> searchBookByCategory(String category);
+  /**
+   * Search book by author.
+   *
+   * @param author
+   *          the author
+   * @return the list
+   */
+  List<Book> searchBookByAuthor(String author);
 
-    Integer editBook(Book book);
+  /**
+   * Search book by category.
+   *
+   * @param category
+   *          the category
+   * @return the list
+   */
+  List<Book> searchBookByCategory(String category);
 
-    int deleteById(Integer id) throws SQLException;
+  /**
+   * Edits the book.
+   *
+   * @param book
+   *          the book
+   * @return the integer
+   */
+  Integer editBook(Book book);
+
+  /**
+   * Delete by id.
+   *
+   * @param id
+   *          the id
+   * @return the int
+   * @throws SQLException
+   *           the SQL exception
+   */
+  int deleteById(Integer id) throws SQLException;
 
 }

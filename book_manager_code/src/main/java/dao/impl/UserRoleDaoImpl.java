@@ -6,8 +6,16 @@ import dao.UserRoleDao;
 import mapper.UserRoleMapper;
 import model.UserRole;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UserRoleDaoImpl.
+ */
 public class UserRoleDaoImpl extends BaseDaoImpl<UserRole> implements UserRoleDao {
 
+	/**
+	 * {@inheritDoc}
+	 * @see dao.UserRoleDao#checkLogin(java.lang.String, java.lang.String)
+	 */
 	public UserRole checkLogin(String username, String password) {
 		String query = "SELECT *" 
 				+" FROM user_tbl AS u" 

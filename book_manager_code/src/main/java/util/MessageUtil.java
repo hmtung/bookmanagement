@@ -1,5 +1,6 @@
 package util;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class MessageUtil.
  */
@@ -61,22 +62,36 @@ public class MessageUtil {
    */
   public static final String UPDATE_DATA_FAIL = "Update data fail";
 
+  /** The Constant ENTER_BOOK_ID. */
   public static final String ENTER_BOOK_ID = "Please enter book's id: ";
+  
+  /** The Constant DELETE_BOOK_SUCCESS. */
   public static final String DELETE_BOOK_SUCCESS = "Book successfully deleted";
+  
+  /** The Constant DELETE_FAILED. */
   public static final String DELETE_FAILED = "Delete failed";
 
+  /** The Constant CHECK_NOT_EXIST_BOOK. */
   public static final String CHECK_NOT_EXIST_BOOK = "This book is not exist!";
+  
+  /** The Constant CHECK_BOOK. */
   public static final String CHECK_BOOK = "There is not any book in application";
 
+  /** The Constant BOOK_NOT_FOUND. */
   public static final String BOOK_NOT_FOUND = "Book not found";
 
+  /** The Constant REMOVE_DATA_SUCCESS. */
   public static final String REMOVE_DATA_SUCCESS = "Remove data success";
 
+  /** The Constant REMOVE_DATA_FAIL. */
   public static final String REMOVE_DATA_FAIL = "Remove data fail";
 
+  /** The Constant LOGIN_FAIL. */
   public static final String LOGIN_FAIL = "Username or Password is wrong! Please enter again.";
 
+  /** The Constant BOOK_CASE_EMPTY. */
   public static final String BOOK_CASE_EMPTY = "Your book case empty";
   
+  /** The Constant DO_NOT_PERMISSION. */
   public static final String DO_NOT_PERMISSION = "You do not have permission to access this function.";
 }

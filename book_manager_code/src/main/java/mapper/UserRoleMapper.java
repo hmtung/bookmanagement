@@ -7,8 +7,16 @@ import model.Role;
 import model.User;
 import model.UserRole;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UserRoleMapper.
+ */
 public class UserRoleMapper implements IRowMapper<UserRole> {
 
+  /**
+   * {@inheritDoc}
+   * @see mapper.IRowMapper#mapRow(java.sql.ResultSet)
+   */
   public UserRole mapRow(ResultSet rs) {
     UserRole userRole = new UserRole();
     User user = new User();

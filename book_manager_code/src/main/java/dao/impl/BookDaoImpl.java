@@ -9,6 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BookDaoImpl.
+ */
 public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 
     /**
@@ -23,6 +27,10 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
         return list;
     }
 
+    /**
+     * {@inheritDoc}
+     * @see dao.BookDao#getBookById(java.lang.Integer)
+     */
     public Book getBookById(Integer id) {
         StringBuffer query = new StringBuffer("SELECT * \n");
         query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
@@ -104,6 +112,10 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     * @see dao.BookDao#deleteById(java.lang.Integer)
+     */
     public int deleteById(Integer id) throws SQLException {
         String query = "DELETE FROM " + Constants.BOOK_TABLE_NAME + " WHERE book_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -112,6 +124,10 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
         return result;
     }
 
+    /**
+     * {@inheritDoc}
+     * @see dao.BookDao#editBook(model.Book)
+     */
     public Integer editBook(Book book) {
         StringBuffer querry = new StringBuffer("UPDATE " + Constants.BOOK_TABLE_NAME + "\n");
         querry.append("SET content = ?\n");
