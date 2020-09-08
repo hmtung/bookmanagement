@@ -26,20 +26,20 @@ public class Book implements Serializable {
         this.category = category;
     }
 
-  public Book(String bookTitle, String author, String brief, String publisher, String content,
-      String category) {
-    super();
-    this.bookTitle = bookTitle;
-    this.author = author;
-    this.brief = brief;
-    this.publisher = publisher;
-    this.content = content;
-    this.category = category;
-  }
+    public Book(String bookTitle, String author, String brief, String publisher, String content,
+                String category) {
+        super();
+        this.bookTitle = bookTitle;
+        this.author = author;
+        this.brief = brief;
+        this.publisher = publisher;
+        this.content = content;
+        this.category = category;
+    }
 
-  public int getBookId() {
-    return bookId;
-  }
+    public int getBookId() {
+        return bookId;
+    }
 
     public void setBookId(Integer bookId) {
         this.bookId = bookId;
@@ -99,11 +99,11 @@ public class Book implements Serializable {
                 + ", brief=" + brief + ", publisher=" + publisher + ", content=" + content
                 + ", category=" + category + "]";
     }
-    
+
     public void display(int stt) {
-    	
-    	System.out.format("%1$-15s %2$-15s %3$-15s %4$-15s %5$-15s %6$-15s %7$-15s %8$-15s \n",
-    			stt,
+
+        System.out.format("%1$-15s %2$-15s %3$-15s %4$-15s %5$-15s %6$-15s %7$-15s %8$-15s \n",
+                stt,
                 bookId,
                 bookTitle,
                 author,

@@ -43,105 +43,105 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         }
     }
 
-  public Integer update(String sql, Object... parameters) {
-    Integer result = null;
-    PreparedStatement statement = null;
-    try {
-      statement = connection.prepareStatement(sql);
-      setParameter(statement, parameters);
-      result = statement.executeUpdate();
-      return result;
-    } catch (SQLException e) {
-      e.printStackTrace();
-      return null;
-    } finally {
-      closePreparedStatement(statement);
-    }
-  }
-
-  public Integer insert(String sql, Object... parameters) {
-    Integer id = null;
-    PreparedStatement statement = null;
-    ResultSet resultSet = null;
-    try {
-      statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-      setParameter(statement, parameters);
-      statement.executeUpdate();
-      resultSet = statement.getGeneratedKeys();
-      if (resultSet.next()) {
-        id = resultSet.getInt(1);
-      }
-      return id;
-    } catch (SQLException e) {
-      e.printStackTrace();
-      return null;
-    } finally {
-      closeFunction(statement, resultSet);
-    }
-  }
-
-  public Integer delete(String sql, Object... parameters) {
-    Integer id = null;
-    PreparedStatement statement = null;
-    ResultSet resultSet = null;
-    try {
-      statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-      setParameter(statement, parameters);
-      statement.executeUpdate();
-      resultSet = statement.getGeneratedKeys();
-      if (resultSet.next()) {
-        id = resultSet.getInt(1);
-      }
-      return id;
-    } catch (SQLException e) {
-      e.printStackTrace();
-      return null;
-    } finally {
-      closeFunction(statement, resultSet);
-    }
-  }
-
-  public void setParameter(PreparedStatement statement, Object... parameters) {
-    try {
-      for (int i = 0; i < parameters.length; i++) {
-        int index = i + 1;
-        Object element = parameters[i];
-        if (element instanceof Long) {
-          statement.setLong(index, (Long) element);
-        } else if (element instanceof String) {
-          statement.setString(index, (String) element);
-        } else if (element instanceof Integer) {
-          statement.setInt(index, (Integer) element);
-        } else if (element instanceof Timestamp) {
-          statement.setTimestamp(index, (Timestamp) element);
+    public Integer update(String sql, Object... parameters) {
+        Integer result = null;
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            setParameter(statement, parameters);
+            result = statement.executeUpdate();
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            closePreparedStatement(statement);
         }
-      }
-    } catch (SQLException e) {
-      return;
     }
-  }
 
-  public void closeFunction(PreparedStatement ps, ResultSet rs) {
-    try {
-      if (ps != null) {
-        ps.close();
-      }
-      if (rs != null) {
-        rs.close();
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
+    public Integer insert(String sql, Object... parameters) {
+        Integer id = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            setParameter(statement, parameters);
+            statement.executeUpdate();
+            resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                id = resultSet.getInt(1);
+            }
+            return id;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            closeFunction(statement, resultSet);
+        }
     }
-  }
 
-  public void closePreparedStatement(PreparedStatement ps) {
-    try {
-      if (ps != null) {
-        ps.close();
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
+    public Integer delete(String sql, Object... parameters) {
+        Integer id = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            setParameter(statement, parameters);
+            statement.executeUpdate();
+            resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                id = resultSet.getInt(1);
+            }
+            return id;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            closeFunction(statement, resultSet);
+        }
     }
-  }
+
+    public void setParameter(PreparedStatement statement, Object... parameters) {
+        try {
+            for (int i = 0; i < parameters.length; i++) {
+                int index = i + 1;
+                Object element = parameters[i];
+                if (element instanceof Long) {
+                    statement.setLong(index, (Long) element);
+                } else if (element instanceof String) {
+                    statement.setString(index, (String) element);
+                } else if (element instanceof Integer) {
+                    statement.setInt(index, (Integer) element);
+                } else if (element instanceof Timestamp) {
+                    statement.setTimestamp(index, (Timestamp) element);
+                }
+            }
+        } catch (SQLException e) {
+            return;
+        }
+    }
+
+    public void closeFunction(PreparedStatement ps, ResultSet rs) {
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+            if (rs != null) {
+                rs.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void closePreparedStatement(PreparedStatement ps) {
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

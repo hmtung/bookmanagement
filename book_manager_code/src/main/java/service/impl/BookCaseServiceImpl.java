@@ -30,14 +30,14 @@ public class BookCaseServiceImpl implements BookCaseService {
     public void addBookToBookCase(Scanner scanner, User user) {
         int bookId = ValidatorUtil.inputInteger("Please enter the book id: ", scanner);
         Book book = bookDaoImpl.getBookById(bookId);
-        if (book == null){
+        if (book == null) {
             System.out.println(MessageUtil.BOOK_NOT_FOUND);
             return;
         }
         Integer result = bookCaseDaoImpl.addBookToBookCase(book.getBookId(), user.getBookCase().getBookCaseId());
-        if (result == null){
+        if (result == null) {
             System.out.println(MessageUtil.ADD_DATA_FAIL);
-        }else{
+        } else {
             System.out.println(MessageUtil.ADD_DATA_SUCCESS);
         }
     }
@@ -45,23 +45,23 @@ public class BookCaseServiceImpl implements BookCaseService {
     public void removeBookFromBookCase(Scanner scanner, User user) {
         int bookId = ValidatorUtil.inputInteger("Please enter the book id: ", scanner);
         Book book = bookDaoImpl.getBookById(bookId);
-        if (book == null){
+        if (book == null) {
             System.out.println(MessageUtil.BOOK_NOT_FOUND);
             return;
         }
         Integer result = bookCaseDaoImpl.removeBookFromBookCase(book.getBookId(), user.getBookCase().getBookCaseId());
-        if (result == null){
+        if (result == null) {
             System.out.println(MessageUtil.REMOVE_DATA_FAIL);
-        }else{
+        } else {
             System.out.println(MessageUtil.REMOVE_DATA_SUCCESS);
         }
     }
 
     public void clearBookCase(User user) {
         Integer result = bookCaseDaoImpl.clearBookCase(user.getBookCase().getBookCaseId());
-        if (result == null){
+        if (result == null) {
             System.out.println(MessageUtil.REMOVE_DATA_FAIL);
-        }else{
+        } else {
             System.out.println(MessageUtil.REMOVE_DATA_SUCCESS);
             System.out.println("Your bookcase is empty!");
         }

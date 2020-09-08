@@ -47,86 +47,86 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
         return null;
     }
 
-  /**
-   * {@inheritDoc}
-   * 
-   * @see dao.BookDao#searchBookByName
-   */
-  public List<Book> searchBookByName(String name) {
-	  	StringBuffer query = new StringBuffer("SELECT * \n");
-	    query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
-	    query.append("WHERE book_title LIKE ?");
-	    String name1 = '%'+ name + '%';
-	    List<Book> list = this.query(query.toString(), new BookMapper(), name1);
-	    
-	    if (list.size() == 0) {
-	      return null;
-	    } else {
-	      return list;
-	    }
-  }
-  
-  /**
-   * {@inheritDoc}
-   * 
-   * @see dao.BookDao#searchBookByAuthor
-   */
-  public List<Book> searchBookByAuthor(String author) {
-	  StringBuffer query = new StringBuffer("SELECT * \n");
-	    query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
-	    query.append("WHERE author LIKE ?");
-	    String author1 = '%'+ author + '%';
-	    List<Book> list = this.query(query.toString(), new BookMapper(), author1);
-	    if (list.size() == 0) {
-	      return null;
-	    } else {
-	      return list;
-	    }
-  }
-  
-  /**
-   * {@inheritDoc}
-   * 
-   * @see dao.BookDao#searchBookByCategory
-   */
-  public List<Book> searchBookByCategory(String category) {
-	  StringBuffer query = new StringBuffer("SELECT * \n");
-	    query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
-	    query.append("WHERE category LIKE ?");
-	    String category1 = '%'+ category + '%';
-	    List<Book> list = this.query(query.toString(), new BookMapper(), category1);
-	    if (list.size() == 0) {
-	      return null;
-	    } else {
-	      return list;
-	    }
-  }
+    /**
+     * {@inheritDoc}
+     *
+     * @see dao.BookDao#searchBookByName
+     */
+    public List<Book> searchBookByName(String name) {
+        StringBuffer query = new StringBuffer("SELECT * \n");
+        query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
+        query.append("WHERE book_title LIKE ?");
+        String name1 = '%' + name + '%';
+        List<Book> list = this.query(query.toString(), new BookMapper(), name1);
 
-	public int deleteById(Integer id) throws SQLException {
-		String query = "DELETE FROM " + Constants.BOOK_TABLE_NAME + " WHERE book_id = ?";
-		PreparedStatement preparedStatement = connection.prepareStatement(query);
-		preparedStatement.setInt(1, id);
-		int result = preparedStatement.executeUpdate();
+        if (list.size() == 0) {
+            return null;
+        } else {
+            return list;
+        }
+    }
 
-		preparedStatement.close();
-		connection.close();
+    /**
+     * {@inheritDoc}
+     *
+     * @see dao.BookDao#searchBookByAuthor
+     */
+    public List<Book> searchBookByAuthor(String author) {
+        StringBuffer query = new StringBuffer("SELECT * \n");
+        query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
+        query.append("WHERE author LIKE ?");
+        String author1 = '%' + author + '%';
+        List<Book> list = this.query(query.toString(), new BookMapper(), author1);
+        if (list.size() == 0) {
+            return null;
+        } else {
+            return list;
+        }
+    }
 
-		return result;
-	}
+    /**
+     * {@inheritDoc}
+     *
+     * @see dao.BookDao#searchBookByCategory
+     */
+    public List<Book> searchBookByCategory(String category) {
+        StringBuffer query = new StringBuffer("SELECT * \n");
+        query.append("FROM " + Constants.BOOK_TABLE_NAME + "\n");
+        query.append("WHERE category LIKE ?");
+        String category1 = '%' + category + '%';
+        List<Book> list = this.query(query.toString(), new BookMapper(), category1);
+        if (list.size() == 0) {
+            return null;
+        } else {
+            return list;
+        }
+    }
+
+    public int deleteById(Integer id) throws SQLException {
+        String query = "DELETE FROM " + Constants.BOOK_TABLE_NAME + " WHERE book_id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, id);
+        int result = preparedStatement.executeUpdate();
+
+        preparedStatement.close();
+        connection.close();
+
+        return result;
+    }
 
     public Integer editBook(Book book) {
-		StringBuffer querry = new StringBuffer("UPDATE " +Constants.BOOK_TABLE_NAME +"\n");
-		querry.append("SET book_title = ?\n");
-		querry.append(",author = ?\n");
-		querry.append(",brief = ?\n");
-		querry.append(",publisher = ?\n");
-		querry.append(",content = ?\n");
-		querry.append(",category = ?\n");
-		querry.append("WHERE book_id = ?\n");
-		
-		Integer result = this.update(querry.toString(), book.getBookTitle(), book.getAuthor(),
-				book.getBrief(), book.getPublisher(), book.getContent(), book.getCategory(), 
-				book.getBookId());
-		return result;
-	}
+        StringBuffer querry = new StringBuffer("UPDATE " + Constants.BOOK_TABLE_NAME + "\n");
+        querry.append("SET book_title = ?\n");
+        querry.append(",author = ?\n");
+        querry.append(",brief = ?\n");
+        querry.append(",publisher = ?\n");
+        querry.append(",content = ?\n");
+        querry.append(",category = ?\n");
+        querry.append("WHERE book_id = ?\n");
+
+        Integer result = this.update(querry.toString(), book.getBookTitle(), book.getAuthor(),
+                book.getBrief(), book.getPublisher(), book.getContent(), book.getCategory(),
+                book.getBookId());
+        return result;
+    }
 }

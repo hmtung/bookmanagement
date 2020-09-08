@@ -10,13 +10,13 @@ public interface BookDao {
 
     Book getBookById(Integer id);
 
-  	Integer insertBook(Book book);
+    Integer insertBook(Book book);
 
-  	List<Book> searchBookByName(String name);
+    List<Book> searchBookByName(String name);
 
-  	List<Book> searchBookByAuthor(String author);
+    List<Book> searchBookByAuthor(String author);
 
-  	List<Book> searchBookByCategory(String category);
+    List<Book> searchBookByCategory(String category);
 
     Integer editBook(Book book);
 

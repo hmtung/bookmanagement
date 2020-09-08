@@ -1,9 +1,9 @@
 package dao;
 
-import java.util.List;
-
 import model.Contain;
 
+import java.util.List;
+
 public interface ContainDao {
-	List<Contain> viewContain(Integer book_case_id);
+    List<Contain> viewContain(Integer book_case_id);
 }
