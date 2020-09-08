@@ -60,6 +60,4 @@ public class MessageUtil {
      * The Constant UPDATE_DATA_FAIL.
      */
     public static final String UPDATE_DATA_FAIL = "Update data fail";
-    
-    public static final String BOOK_CASE_IS_EMPTY = "Your BookCase is empty";
 }
