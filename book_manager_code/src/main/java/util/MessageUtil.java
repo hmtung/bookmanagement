@@ -60,4 +60,12 @@ public class MessageUtil {
      * The Constant UPDATE_DATA_FAIL.
      */
     public static final String UPDATE_DATA_FAIL = "Update data fail";
+
+    public static final String ENTER_BOOK_ID = "Please enter book's id: ";
+    public static final String DELETE_BOOK_SUCCESS = "Book successfully deleted";
+    public static final String DELETE_FAILED = "Delete failed";
+    
+    
+    public static final String CHECK_NOT_EXIST_BOOK = "This book is not exist!";
+    public static final String CHECK_BOOK = "There is not any book in application";
 }

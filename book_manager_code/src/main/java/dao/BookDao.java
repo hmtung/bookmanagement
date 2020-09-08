@@ -2,6 +2,7 @@ package dao;
 
 import model.Book;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface BookDao {
@@ -17,4 +18,9 @@ public interface BookDao {
   
   	List<Book> searchBookByCategory(String category);
 
+    Integer insertBook(Book book);
+    
+    Integer editBook(Book book);
+
+    int deleteById(Integer id) throws SQLException;
 }
