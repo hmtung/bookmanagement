@@ -54,6 +54,7 @@ public class Main {
         System.out.println("7. Update Content Book");
         System.out.println("8. Delete Book");
         System.out.println("9. Logout");
+        System.out.println("10. Exit");
         select = ValidatorUtil.inputSelectedMenu(scanner);
         switch (select) {
         case 1:
@@ -104,8 +105,11 @@ public class Main {
             System.out.println("Login fail");
           }
           break;
+        case 10:
+          System.out.println("Closing program");
+          System.exit(0);
+          break;
         }
-
         System.out.println();
       }
     } finally {

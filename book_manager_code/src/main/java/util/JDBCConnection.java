@@ -22,6 +22,7 @@ public class JDBCConnection {
         try {
             connection.close();
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
