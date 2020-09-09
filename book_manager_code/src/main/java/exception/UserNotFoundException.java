@@ -1,12 +1,15 @@
 package exception;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class UserNotFoundException.
  */
 public class UserNotFoundException extends Exception {
 
-    /** The Constant serialVersionUID. */
+    /**
+     * The Constant serialVersionUID.
+     */
     private static final long serialVersionUID = 1L;
 
     /**

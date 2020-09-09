@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class BookDaoImpl.
  */
@@ -29,6 +30,7 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 
     /**
      * {@inheritDoc}
+     *
      * @see dao.BookDao#getBookById(java.lang.Integer)
      */
     public Book getBookById(Integer id) {
@@ -49,12 +51,12 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
      * @see dao.BookDao#insertBook(model.Book)
      */
     public Integer insertBook(Book book) {
-      StringBuffer query = new StringBuffer("INSERT INTO  " + Constants.BOOK_TABLE_NAME + " ( ");
-      query.append(" book_title, author, brief, publisher, content, category )");
-      query.append(" VALUES(?, ?, ?, ?, ?,? )");
-      Integer result = this.insert(query.toString(), book.getBookTitle(), book.getAuthor(),
-          book.getBrief(), book.getPublisher(), book.getContent(), book.getCategory());
-      return result;
+        StringBuffer query = new StringBuffer("INSERT INTO  " + Constants.BOOK_TABLE_NAME + " ( ");
+        query.append(" book_title, author, brief, publisher, content, category )");
+        query.append(" VALUES(?, ?, ?, ?, ?,? )");
+        Integer result = this.insert(query.toString(), book.getBookTitle(), book.getAuthor(),
+                book.getBrief(), book.getPublisher(), book.getContent(), book.getCategory());
+        return result;
     }
 
     /**
@@ -114,6 +116,7 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 
     /**
      * {@inheritDoc}
+     *
      * @see dao.BookDao#deleteById(java.lang.Integer)
      */
     public int deleteById(Integer id) throws SQLException {
@@ -126,6 +129,7 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
 
     /**
      * {@inheritDoc}
+     *
      * @see dao.BookDao#editBook(model.Book)
      */
     public Integer editBook(Book book) {

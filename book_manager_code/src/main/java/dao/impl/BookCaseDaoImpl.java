@@ -11,6 +11,7 @@ import java.util.List;
 
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class BookCaseDaoImpl.
  */
@@ -18,6 +19,7 @@ public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDa
 
     /**
      * {@inheritDoc}
+     *
      * @see dao.BookCaseDao#viewBookCase(java.lang.Integer)
      */
     public BookCase viewBookCase(Integer user_id) {
@@ -34,6 +36,7 @@ public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDa
 
     /**
      * {@inheritDoc}
+     *
      * @see dao.BookCaseDao#addBookToBookCase(int, int)
      */
     public Integer addBookToBookCase(int bookId, int bookCaseId) {
@@ -46,6 +49,7 @@ public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDa
 
     /**
      * {@inheritDoc}
+     *
      * @see dao.BookCaseDao#removeBookFromBookCase(int, int)
      */
     public Integer removeBookFromBookCase(int bookId, int bookCaseId) {
@@ -58,6 +62,7 @@ public class BookCaseDaoImpl extends BaseDaoImpl<BookCase> implements BookCaseDa
 
     /**
      * {@inheritDoc}
+     *
      * @see dao.BookCaseDao#clearBookCase(int)
      */
     public Integer clearBookCase(int bookCaseId) {

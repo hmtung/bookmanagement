@@ -3,11 +3,12 @@ package dao;
 import model.BookCase;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Interface BookCaseDao.
  */
 public interface BookCaseDao {
-    
+
     /**
      * View book case.
      *
@@ -19,7 +20,7 @@ public interface BookCaseDao {
     /**
      * Adds the book to book case.
      *
-     * @param bookId the book id
+     * @param bookId     the book id
      * @param bookCaseId the book case id
      * @return the integer
      */
@@ -28,7 +29,7 @@ public interface BookCaseDao {
     /**
      * Removes the book from book case.
      *
-     * @param bookId the book id
+     * @param bookId     the book id
      * @param bookCaseId the book case id
      * @return the integer
      */

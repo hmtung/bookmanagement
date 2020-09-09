@@ -5,18 +5,19 @@ import mapper.IRowMapper;
 import java.util.List;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Interface BaseDao.
  *
  * @param <T> the generic type
  */
 public interface BaseDao<T> {
-    
+
     /**
      * Query.
      *
-     * @param sql the sql
-     * @param rowMapper the row mapper
+     * @param sql        the sql
+     * @param rowMapper  the row mapper
      * @param parameters the parameters
      * @return the list
      */
@@ -25,7 +26,7 @@ public interface BaseDao<T> {
     /**
      * Update.
      *
-     * @param sql the sql
+     * @param sql        the sql
      * @param parameters the parameters
      * @return the integer
      */
@@ -34,7 +35,7 @@ public interface BaseDao<T> {
     /**
      * Insert.
      *
-     * @param sql the sql
+     * @param sql        the sql
      * @param parameters the parameters
      * @return the integer
      */
@@ -43,7 +44,7 @@ public interface BaseDao<T> {
     /**
      * Delete.
      *
-     * @param sql the sql
+     * @param sql        the sql
      * @param parameters the parameters
      * @return the integer
      */

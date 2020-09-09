@@ -4,21 +4,30 @@ import java.io.Serializable;
 import java.util.Date;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class Contain.
  */
 public class Contain implements Serializable {
-    
-    /** The Constant serialVersionUID. */
+
+    /**
+     * The Constant serialVersionUID.
+     */
     private static final long serialVersionUID = 1L;
-    
-    /** The book case. */
+
+    /**
+     * The book case.
+     */
     private BookCase bookCase;
-    
-    /** The book. */
+
+    /**
+     * The book.
+     */
     private Book book;
-    
-    /** The create date. */
+
+    /**
+     * The create date.
+     */
     private Date createDate;
 
     /**
@@ -30,8 +39,8 @@ public class Contain implements Serializable {
     /**
      * Instantiates a new contain.
      *
-     * @param bookCase the book case
-     * @param book the book
+     * @param bookCase   the book case
+     * @param book       the book
      * @param createDate the create date
      */
     public Contain(BookCase bookCase, Book book, Date createDate) {

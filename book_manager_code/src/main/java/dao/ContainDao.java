@@ -5,11 +5,12 @@ import model.Contain;
 import java.util.List;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Interface ContainDao.
  */
 public interface ContainDao {
-    
+
     /**
      * View contain.
      *

@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class ContainMapper.
  */
@@ -15,6 +16,7 @@ public class ContainMapper implements IRowMapper<Contain> {
 
     /**
      * {@inheritDoc}
+     *
      * @see mapper.IRowMapper#mapRow(java.sql.ResultSet)
      */
     public Contain mapRow(ResultSet rs) {

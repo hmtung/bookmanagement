@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class BookMapper.
  */
@@ -13,6 +14,7 @@ public class BookMapper implements IRowMapper<Book> {
 
     /**
      * {@inheritDoc}
+     *
      * @see mapper.IRowMapper#mapRow(java.sql.ResultSet)
      */
     public Book mapRow(ResultSet rs) {

@@ -6,11 +6,12 @@ import model.User;
 import java.util.Scanner;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Interface BookCaseService.
  */
 public interface BookCaseService {
-    
+
     /**
      * View book case.
      *
@@ -22,7 +23,7 @@ public interface BookCaseService {
      * Adds the book to book case.
      *
      * @param scanner the scanner
-     * @param user the user
+     * @param user    the user
      */
     void addBookToBookCase(Scanner scanner, User user);
 
@@ -30,7 +31,7 @@ public interface BookCaseService {
      * Removes the book from book case.
      *
      * @param scanner the scanner
-     * @param user the user
+     * @param user    the user
      */
     void removeBookFromBookCase(Scanner scanner, User user);
 
@@ -40,12 +41,12 @@ public interface BookCaseService {
      * @param user the user
      */
     void clearBookCase(User user);
-    
+
     /**
      * Edits the book case.
      *
      * @param scanner the scanner
-     * @param user the user
+     * @param user    the user
      */
     void editBookCase(Scanner scanner, User user);
 }

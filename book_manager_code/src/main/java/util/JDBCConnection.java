@@ -8,6 +8,7 @@ import java.util.Properties;
 
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class JDBCConnection.
  */

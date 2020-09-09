@@ -3,33 +3,50 @@ package model;
 import java.io.Serializable;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class Book.
  */
 public class Book implements Serializable {
-    
-    /** The Constant serialVersionUID. */
+
+    /**
+     * The Constant serialVersionUID.
+     */
     private static final long serialVersionUID = 1L;
-    
-    /** The book id. */
+
+    /**
+     * The book id.
+     */
     private Integer bookId;
-    
-    /** The book title. */
+
+    /**
+     * The book title.
+     */
     private String bookTitle;
-    
-    /** The author. */
+
+    /**
+     * The author.
+     */
     private String author;
-    
-    /** The brief. */
+
+    /**
+     * The brief.
+     */
     private String brief;
-    
-    /** The publisher. */
+
+    /**
+     * The publisher.
+     */
     private String publisher;
-    
-    /** The content. */
+
+    /**
+     * The content.
+     */
     private String content;
-    
-    /** The category. */
+
+    /**
+     * The category.
+     */
     private String category;
 
     /**
@@ -41,13 +58,13 @@ public class Book implements Serializable {
     /**
      * Instantiates a new book.
      *
-     * @param bookId the book id
+     * @param bookId    the book id
      * @param bookTitle the book title
-     * @param author the author
-     * @param brief the brief
+     * @param author    the author
+     * @param brief     the brief
      * @param publisher the publisher
-     * @param content the content
-     * @param category the category
+     * @param content   the content
+     * @param category  the category
      */
     public Book(Integer bookId, String bookTitle, String author, String brief, String publisher,
                 String content, String category) {
@@ -64,11 +81,11 @@ public class Book implements Serializable {
      * Instantiates a new book.
      *
      * @param bookTitle the book title
-     * @param author the author
-     * @param brief the brief
+     * @param author    the author
+     * @param brief     the brief
      * @param publisher the publisher
-     * @param content the content
-     * @param category the category
+     * @param content   the content
+     * @param category  the category
      */
     public Book(String bookTitle, String author, String brief, String publisher, String content,
                 String category) {
@@ -84,13 +101,13 @@ public class Book implements Serializable {
     /**
      * Instantiates a new book.
      *
-     * @param bookId the book id
+     * @param bookId  the book id
      * @param content the content
      */
     public Book(Integer bookId, String content) {
-      super();
-      this.bookId = bookId;
-      this.content = content;
+        super();
+        this.bookId = bookId;
+        this.content = content;
     }
 
     /**
@@ -221,6 +238,7 @@ public class Book implements Serializable {
 
     /**
      * {@inheritDoc}
+     *
      * @see java.lang.Object#toString()
      */
     @Override
